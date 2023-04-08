@@ -1,8 +1,8 @@
-import * as React from "react";
-import Document, {Html, Head, Main, NextScript, DocumentInitialProps} from "next/document";
-import createEmotionServer from "@emotion/server/create-instance";
-import createEmotionCache from "@/utils/createEmotionCache";
-import {CssBaseline} from "@mui/material";
+import * as React from 'react';
+import Document, { Html, Head, Main, NextScript, DocumentInitialProps } from 'next/document';
+import createEmotionServer from '@emotion/server/create-instance';
+import createEmotionCache from '@/utils/createEmotionCache';
+import { Container, CssBaseline } from '@mui/material';
 
 interface IMyDocumentProps {
     emotionStyleTags: JSX.Element[];
@@ -13,7 +13,6 @@ export default class MyDocument extends Document<IMyDocumentProps> {
         return (
             <Html lang="en">
                 <Head>
-                    <title>Walkenstat</title>
                     <meta name="description" content="Collect win-lose information about your cathelts" />
                     <meta name="viewport" content="width=device-width, initial-scale=1" />
                     <link rel="icon" href="/favicon.ico" />
@@ -21,7 +20,10 @@ export default class MyDocument extends Document<IMyDocumentProps> {
                     <CssBaseline />
                 </Head>
                 <body>
-                    <Main />
+                    <Container>
+                        <Main />
+                    </Container>
+
                     <NextScript />
                 </body>
             </Html>
@@ -37,7 +39,7 @@ MyDocument.getInitialProps = async (ctx): Promise<DocumentInitialProps & IMyDocu
 
     ctx.renderPage = () =>
         originalRenderPage({
-            enhanceApp: (App) =>
+            enhanceApp: App =>
                 function EnhanceApp(props) {
                     return <App emotionCache={cache} {...props} />;
                 },
@@ -46,9 +48,9 @@ MyDocument.getInitialProps = async (ctx): Promise<DocumentInitialProps & IMyDocu
     const initialProps = await Document.getInitialProps(ctx);
 
     const emotionStyles = extractCriticalToChunks(initialProps.html);
-    const emotionStyleTags = emotionStyles.styles.map((style) => (
+    const emotionStyleTags = emotionStyles.styles.map(style => (
         <style
-            data-emotion={`${style.key} ${style.ids.join(" ")}`}
+            data-emotion={`${style.key} ${style.ids.join(' ')}`}
             key={style.key}
             dangerouslySetInnerHTML={{ __html: style.css }}
         />
