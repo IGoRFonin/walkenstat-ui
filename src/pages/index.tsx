@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Head from 'next/head';
+import NavBar from '@/components/NavBar/NavBar';
 
 export default function Home() {
     return (
@@ -8,6 +9,7 @@ export default function Home() {
                 <title>Walkenstat</title>
             </Head>
             qwe
+            <NavBar />
         </>
     );
 }
