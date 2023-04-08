@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { Container, CssBaseline } from '@mui/material';
+import NavBar from '@/components/NavBar/NavBar';
 
 export default class MyDocument extends Document {
     render() {
@@ -13,10 +14,12 @@ export default class MyDocument extends Document {
                     <CssBaseline />
                 </Head>
                 <body>
-                    <Container>
-                        <Main />
-                    </Container>
-
+                    <div className="main-container">
+                        <Container>
+                            <Main />
+                        </Container>
+                        <NavBar />
+                    </div>
                     <NextScript />
                 </body>
             </Html>

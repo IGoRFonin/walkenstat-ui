@@ -1,10 +1,10 @@
 import '../styles/globals.css';
 import { ThemeProvider } from '@mui/material';
-import { darkTheme } from '@/utils/theme';
+import { lightTheme } from '@/utils/theme';
 
 export default function App({ Component, pageProps }) {
     return (
-        <ThemeProvider theme={darkTheme}>
+        <ThemeProvider theme={lightTheme}>
             <Component {...pageProps} />
         </ThemeProvider>
     );

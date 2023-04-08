@@ -5,7 +5,15 @@ import styles from './Navbar.module.css';
 
 const NavBar: React.FC = () => {
     return (
-        <Paper className={styles.paper} elevation={3}>
+        <Paper
+            elevation={3}
+            sx={{
+                position: 'fixed',
+                right: '0',
+                bottom: '0',
+                left: '0',
+            }}
+        >
             <BottomNavigation
                 showLabels
                 // value={value}

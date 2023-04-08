@@ -1,0 +1,45 @@
+.paper {
+    padding: 16px;
+
+    border-radius: 14px;
+}
+
+.head {
+    margin-bottom: 12px;
+}
+
+.strength {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 16px;
+    margin: 0px 4px;
+    padding: 0.5em;
+    background-color: rgb(129, 194, 89);
+}
+
+.stamina {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 16px;
+    margin: 0px 4px;
+    padding: 0.5em;
+    background-color: rgb(241, 86, 76);
+}
+
+.speed {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 16px;
+    margin: 0px 4px;
+    padding: 0.5em;
+    background-color: rgb(130, 109, 212);
+}

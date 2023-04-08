@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Head from 'next/head';
-import NavBar from '@/components/NavBar/NavBar';
+import CAThleteCard from '@/components/CAThleteCard/CAThleteCard';
+import { Stack } from '@mui/material';
 
 export default function Home() {
     return (
@@ -8,8 +9,13 @@ export default function Home() {
             <Head>
                 <title>Walkenstat</title>
             </Head>
-            qwe
-            <NavBar />
+
+            <Stack spacing={2}>
+                <CAThleteCard />
+                <CAThleteCard />
+                <CAThleteCard />
+                <CAThleteCard />
+            </Stack>
         </>
     );
 }
